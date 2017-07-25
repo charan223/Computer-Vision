@@ -1,0 +1,16 @@
+##Running of Files
+Run make file
+ 
+And output for color corrected images are stored in `corrected_images` folder
+
+And output for saturated and desaturated are stored in `saturated_images` as `saturated.jpg` and `desaturated.jpg`
+
+Please look into `Part3 in Python` and `Part1 in Python` for more elaborate codes and implementations 
+based on research papers sent by sir
+
+C++ language codes are written based on a Open Source Project in github by MIT
+
+README file for `Part3 in Python` and `Part1 in Python` are in their respective folders
+
+
+

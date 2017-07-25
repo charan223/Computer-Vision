@@ -1,0 +1,73 @@
+### R.Sri Charan Reddy 14CS10037
+
+### Instructions to use
+
+### Homography using manual tagging
+
+Run:
+`python homo.py Dec12.jpg Jan12.jpg manual`
+
+Implementation and Observation:
+* After running the code, the two images will be displayed. 
+* Double click on each of 4 points and their corresponding points in same order in both images.
+* Then press Esc key to proceed.
+* Points selected and Homography matrix is displayed
+* The final warped image,difference image,original images will be displayed and saved in the same directory as `Manual_tagging_warped_image.jpg` and `Manual_tagging_difference_image.jpg`.
+* Used cv2.setMouseCallback to store clicked points and used cv2.findHomography(pts1, pts2) to find homography between selected points
+* Used cv2.warpPerspective() with shape of second image and homography on first image
+
+### Homography using SIFT feature descriptor -PYTHON  (Opencv 2.4.13 needed for this)
+
+Run: 
+`python homo.py Dec12.jpg Jan12.jpg sift`
+
+Implementation and Observation:
+* After running the code, points are automatically selected by SIFT featuure descriptor. 
+* Homography matrix is displayed
+* The final warped image,difference image,original images will be displayed and saved in the same directory as `sift_warped_image.jpg` and `sift_difference_image.jpg`.
+* Found keypoints using cv2.SIFT() -> It is on Opencv 2.4.13 ,and then calulcated Flann parameters and then appended points which satisfy ratio test of Lowe's paper
+
+
+OR
+
+### Homography using SURF feature descriptor -C++ (Opencv 3.0.0 needed for this)
+
+Run: 
+`c++ surf.cpp`
+`./a.out Dec12.jpg Jan12.jpg`
+
+Implementation and Observation:
+* After running the code, points are automatically selected by SURF feature descriptor. 
+* The final image showing lines matching two images is displayed
+* Implementation is explained clearly in the comments of the code
+
+
+### Difference images
+
+Implementation and Observation:
+* Difference images are automatically stored as mentioned above.
+* After homography is performed, all the set of images are in same coordinate system.Now a pixel difference is taken and stored in an image
+(no threshold is put because output image is clearer without threshold)
+
+Scene changes: (Comparing Dec12,Jan12)
+* The difference image shows that flowers,plants have grown on Jan12 compared to Dec12.
+* Trees,plants in the back and in the front have become much greener on Jan12.
+* Blue patches in the difference image shows shade on Jan12.
+* White or light gray patches show that there is not much of a change in those locations.
+
+### Affine Rectification
+
+Run: 
+`python homo.py Dec12.jpg Jan12.jpg affine`
+
+Implementation and Observation:
+* After running the code, the two images will be displayed. 
+* Double click on each of 8 points such that they form 2 sets of parallel lines and their corresponding points in same order in both images.
+* Then press Esc key to proceed.
+* Points selected ,vanishing points,vanishing line are displayed for both images
+* Affine rectified images are displayed for both images and are stored in `Affine_rectified_first_image.jpg` and `Affine_rectified_second_image.jpg`
+* Firstly vanishing points are calculated by cross product of parallel lines,later vanishing line is calculated by cross product of vanishing points
+* Homography matrix is calculated by multiplying Affine matrix with [[1,0,0],[0,1,0],[vanishing line]]
+
+Note: Results(if images) are stored in image files as said above, values are outputted on the screen
+Note: Change path in your code accordingly

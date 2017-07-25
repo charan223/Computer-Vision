@@ -1,0 +1,11 @@
+Consider a pair of images of the same scene taken by the same camera from two different viewing positions (as attached with the assignment). Perform the following operations.
+(i) Form a set of pairs of corresponding points using key point extraction and feature descriptors (e.g. SIFT or SURF). You may use functions provided by the development environment for these operations.  10
+(ii) Compute the fundamental matrix from them. 20
+(iii) Draw the epipolar lines corresponding to the key point set formed by you in both images.   20
+(iv) Estimate the epipoles from these lines, and also compute the epipoles from the fundamental matrix. Find out the distances between two different estimated values. 20
+(v) Estimate projection matrices from Fundamental matrix. 20
+(vi) Compute 3D coordinates of the scene using projection matrices and state whether the depth values corroborate with relative 3D positions of those points as observed in images. 10
+
+Submit your codes, results, a README file for running the codes and a write-up describing the implementation and observations.
+
+For well organised reporting and coding — 10.

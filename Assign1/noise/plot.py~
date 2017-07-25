@@ -1,0 +1,25 @@
+p = [0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9]
+median = [ 7.4981690839, 7.49817271944, 7.49816412968, 7.49815297055, 7.49815996653,7.49805817876,7.49804003454,7.49809429826, 7.49774841173]
+mean = [ 7.4981690839, 7.49817271944, 7.49816412968, 7.49815297055, 7.49815996653,7.49805817876,7.49804003454,7.49809429826, 7.49774841173]
+
+import matplotlib.pyplot as plt
+medianplt, = plt.plot(p,median,'ro-',label='Median Filtering')
+meanplt, = plt.plot(p,mean,'bo-',label='Mean Filtering')
+plt.legend(handles=[medianplt,meanplt])
+
+plt.savefig("plot.png")
+plt.show()
+
+p1 = [0.01, 0.02, 0.05, 0.1, 0.2, 0.3, 0.5, 0.7, 0.9]
+median1= [ 7.4981690839, 7.49817271944, 7.49816412968, 7.49815297055, 7.49815996653,7.49805817876,7.49804003454,7.49809429826, 7.49774841173] 
+mean1= [7.49808533462, 7.49809067247, 7.4980880736, 7.49808382524, 7.49810036485, 7.49800265913, 7.49799141998, 7.49805116996, 7.49770711509]
+
+
+medianplt1, = plt.plot(p,median1,'ro-',label='Library Median Filtering')
+meanplt1, = plt.plot(p,mean1,'bo-',label='Library Mean Filtering')
+plt.legend(handles=[medianplt1,meanplt1])
+
+plt.savefig("libraryplot.png")
+plt.show()
+
+
